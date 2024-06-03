@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 public class Measurement {
 
     @Id
+    private long id;
     private Timestamp timestamp;
     private double temperature;
     private int humidity;

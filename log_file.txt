@@ -2241,3 +2241,8 @@ Unconditional classes:
 00:35:09.660 [main] INFO  ppj.assignments.Main - The following profiles are active: devel
 00:35:10.325 [main] INFO  ppj.assignments.Main - Started Main in 1.166 seconds (JVM running for 1.841)
 00:35:10.327 [main] DEBUG ppj.assignments.Main - Application PPJ_cv6 [profiles devel, description 'devel test']
+00:14:35.559 [main] INFO  ppj.assignments.Main - Starting Main on HonzaP with PID 31628 (E:\VS_TUL_navazujici\2_semestr\PPJ\cv\semestral\target\classes started by HonzaP in E:\VS_TUL_navazujici\2_semestr\PPJ\cv\semestral)
+00:14:35.559 [main] DEBUG ppj.assignments.Main - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+00:14:35.559 [main] INFO  ppj.assignments.Main - The following profiles are active: devel
+00:14:36.217 [main] INFO  ppj.assignments.Main - Started Main in 1.099 seconds (JVM running for 1.991)
+00:14:36.219 [main] DEBUG ppj.assignments.Main - Application PPJ_cv6 [profiles devel, description 'devel test']

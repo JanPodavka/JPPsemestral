@@ -1,1 +1,2 @@
-# ppj_cv6
+# Semestrální práce JPP
+Autor: Jan Podávka

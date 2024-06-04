@@ -1,6 +1,8 @@
 package ppj.assignments.data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.TimeZone;
 
 

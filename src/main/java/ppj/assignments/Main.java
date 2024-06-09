@@ -5,11 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import ppj.assignments.beans.ApiService;
+import ppj.assignments.beans.WeatherService;
 import ppj.assignments.beans.DatabaseService;
 import ppj.assignments.configs.AppConfiguration;
 
-
+import java.util.Date;
 
 
 @SpringBootApplication
@@ -29,24 +29,24 @@ public class Main {
 
         String apiKey = cfg.getApiKey();
         String apiKeyHistory = cfg.getApiKeyHistory();
+        String location = "Liberec";
+        WeatherService weatherService = ctx.getBean(WeatherService.class);
+        weatherService.getActualWeatherByCity(apiKey, location);
 
-        ApiService apiService = ctx.getBean(ApiService.class);
-        apiService.getWeather(apiKey);
+        long currentUnixTimeMillis = System.currentTimeMillis();
+        long currentUnixTimeSeconds = currentUnixTimeMillis / 1000;
+        Date date = new Date(currentUnixTimeSeconds * 1000); // Convert seconds to milliseconds
+        System.out.println(date);
 
 
 
 
-
-
-        //// zde pouze dotazy pro získání informací
-        //getWeather(apiKey);
-        //getWeatherByDate(apiKeyHistory);
 
 
     }
     @Bean
-    public ApiService apiService() {
-        return new ApiService();
+    public WeatherService apiService() {
+        return new WeatherService();
     }
 
     @Bean

@@ -8,7 +8,6 @@ public class City {
     @Id
     private Long id; //cityID
     private String name;
-    private int population;
 
     @ManyToOne
     @JoinColumn(name = "country_id")
@@ -20,10 +19,9 @@ public class City {
     public City() {
         this.country = new Country();
     }
-    public City(Long id, String name, int population, Country country) {
+    public City(Long id, String name, Country country) {
         this.id = id;
         this.name = name;
-        this.population = population;
         this.country = country;
     }
 
@@ -35,11 +33,20 @@ public class City {
         return country;
     }
 
-    public int getPopulation() {
-        return population;
-    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 }

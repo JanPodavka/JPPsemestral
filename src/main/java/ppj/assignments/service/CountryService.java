@@ -20,15 +20,15 @@ public class CountryService {
         return countryRepository.save(country);
     }
 
-    public Optional<Country> updateCountry(Long id, Country updatedCountry) {
-        return countryRepository.findById(id).map(country -> {
-            country.setName(updatedCountry.getName());
-            country.setTimeZone(updatedCountry.getTimeZone());
-            return countryRepository.save(country);
-        });
+//    public Optional<Country> updateCountry(String countryCode, Country updatedCountry) {
+//        return countryRepository.findByCountryCode(countryCode).map(country -> {
+//            country.setLatitude(updatedCountry.getLatitude());
+//            country.setLongitude(updatedCountry.getLongitude());
+//            return countryRepository.save(country);
+//        });
     }
 
-    public void deleteCountry(Long id) {
-        countryRepository.deleteById(id);
-    }
-}
+//    public void deleteCountry(Long id) {
+//        countryRepository.deleteById(id);
+//    }
+//}

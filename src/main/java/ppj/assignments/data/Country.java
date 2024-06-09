@@ -3,43 +3,49 @@ package ppj.assignments.data;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.TimeZone;
 
 
 @Entity
 @Table(name = "country")
 public class Country {
     @Id
-    private Long id; //countrycode
-    private String name;
-    private TimeZone timeZone;
+    private String countryCode; //countrycode
+    private float latitude;
+    private float longitude;
 
 
     public Country() {}
-    public Country (Long id, String name, TimeZone timeZone) {
-        this.id = id;
-        this.name = name;
-        this.timeZone = timeZone;
+    public Country (String countryCode, float latitude, float longitude) {
+        this.countryCode = countryCode;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public String getName() {
-        return name;
+
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public Long getId() {
-        return id;
+
+    public float getLatitude() {
+        return latitude;
+    }
+    public float getLongitude() {
+        return longitude;
     }
 
-    public TimeZone getTimeZone() {
-        return timeZone;
-    }
-    public void setTimeZone(TimeZone timeZone) {}
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
     }
+
+
+    public void setCountryCode(String id) {
+        this.countryCode = id;
+    }
+
+
 }

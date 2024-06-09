@@ -30,16 +30,18 @@ public class Measurement implements Serializable {
         this.windSpeed = windSpeed;
         this.city = city;
     }
+
+
+    public City getCity() {
+        return city;
+    }
+
     public long getId() {
         return id;
     }
 
     public Timestamp getTimestamp() {
         return timestamp;
-    }
-
-    public City getCity() {
-        return city;
     }
 
     public double getTemperature() {
@@ -53,4 +55,10 @@ public class Measurement implements Serializable {
     public int getHumidity() {
         return humidity;
     }
+    public void setId(final long id) {}
+    public void setTimestamp(final Timestamp timestamp) {}
+    public void setTemperature(final double temperature) {}
+    public void setWindSpeed(final double windSpeed) {}
+    public void setHumidity(final int humidity) {}
+    public void setCity(final City city) {}
 }

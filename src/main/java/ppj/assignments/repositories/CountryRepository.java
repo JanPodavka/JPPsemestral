@@ -8,8 +8,9 @@ import ppj.assignments.data.Country;
 import java.util.List;
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country, Long> {
+public interface CountryRepository extends JpaRepository<Country, String> {
 
-
+        boolean existsByCountryCode(String CountryCode);
+        Country findByCountryCode(String countryCode);
 
 }

@@ -3,15 +3,13 @@ package ppj.assignments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import ppj.assignments.beans.ApiService;
+import ppj.assignments.beans.DatabaseService;
 import ppj.assignments.configs.AppConfiguration;
-import ppj.assignments.writer.Writer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 
 
 @SpringBootApplication
@@ -27,40 +25,67 @@ public class Main {
         ApplicationContext ctx = app.run(args);
 
         AppConfiguration cfg = ctx.getBean(AppConfiguration.class);
-        Writer writer = ctx.getBean(Writer.class);
-        writer.write(cfg.toString());
+
+
+        String apiKey = cfg.getApiKey();
+        String apiKeyHistory = cfg.getApiKeyHistory();
+
+        ApiService apiService = ctx.getBean(ApiService.class);
+        apiService.getWeather(apiKey);
+
+
+
 
 
 
         //// zde pouze dotazy pro získání informací
-        getWeather();
-
+        //getWeather(apiKey);
+        //getWeatherByDate(apiKeyHistory);
 
 
     }
-    public static void getWeather() throws IOException {
-        String API_KEY = "6c116b843f6d300eccfcc05acafb7f3f";
-        String LOCATION = "Prague,cz";
-        String urlString = "http://api.openweathermap.org/data/2.5/weather?q=" + LOCATION + "&appid=" + API_KEY + "&units=metric";
-
-        URL url = new URL(urlString);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-
-        int responseCode = connection.getResponseCode();
-        System.out.println("Response Code: " + responseCode);
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        StringBuilder response = new StringBuilder();
-        String line;
-
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
-            response.append(line);
-        }
-
-        reader.close();
+    @Bean
+    public ApiService apiService() {
+        return new ApiService();
     }
 
-
+    @Bean
+    public DatabaseService databaseService() {
+        return new DatabaseService();
+    }
+//    public static void readData(String urlString) throws IOException {
+//        URL url = new URL(urlString);
+//        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//        connection.setRequestMethod("GET");
+//
+//        int responseCode = connection.getResponseCode();
+//        System.out.println("Response Code: " + responseCode);
+//
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//        StringBuilder response = new StringBuilder();
+//        String line;
+//
+//        while ((line = reader.readLine()) != null) {
+//            System.out.println(line);
+//            response.append(line);
+//        }
+//
+//        reader.close();
+//    }
+//
+//
+//    public static void getWeatherByDate(String API_key) throws IOException {
+//        String LOCATION = "Prague,cz";
+//        String urlString = "https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87.65&appid=" + API_key;
+//        readData(urlString);
+//    }
+//
+//    public static void getWeather(String API_key) throws IOException {
+//        String LOCATION = "Prague";
+//        String urlString = "http://api.openweathermap.org/data/2.5/weather?q=" + LOCATION + "&appid=" + API_key + "&units=metric";
+//
+//        readData(urlString);
+//    }
+//
+//
 }

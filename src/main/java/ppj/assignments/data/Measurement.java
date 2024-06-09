@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 public class Measurement implements Serializable {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     private Timestamp timestamp;
     private double temperature;

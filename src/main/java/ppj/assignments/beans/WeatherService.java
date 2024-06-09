@@ -49,17 +49,17 @@ public class WeatherService {
                  if (!countryRepository.existsByCountryCode(countryCode)){
                    Country newCountry = new Country();
                     newCountry.setCountryCode(countryCode);
-                    newCountry.setLatitude(lat.floatValue());
-                    newCountry.setLongitude(lon.floatValue());
                     countryRepository.save(newCountry);
                     System.out.println("New country: " + newCountry.getCountryCode());
                 }
 
                 Country existingCountry = countryRepository.findByCountryCode(country.asText());
-                if (!cityRepository.existsById(Long.valueOf(id.asText()))) {
+
+                if (!cityRepository.existsByName(city.asText())) {
                     City newCity = new City();
-                    newCity.setId(id.longValue());
                     newCity.setName(cityName);
+                    newCity.setLatitude(lat.floatValue());
+                    newCity.setLongitude(lon.floatValue());
                     newCity.setCountry(existingCountry);
                     cityRepository.save(newCity);
                     System.out.println("New city: " + newCity.getName());

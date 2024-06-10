@@ -29,7 +29,6 @@ public class MeasurementService {
             existingMeasurement.setTemperature(measurement.getTemperature());
             existingMeasurement.setWindSpeed(measurement.getWindSpeed());
             existingMeasurement.setHumidity(measurement.getHumidity());
-            // Update other fields as necessary
             return measurementRepository.save(existingMeasurement);
         } else {
             throw new RuntimeException("Measurement not found");

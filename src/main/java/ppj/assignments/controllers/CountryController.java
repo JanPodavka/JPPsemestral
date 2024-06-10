@@ -6,7 +6,6 @@ import ppj.assignments.data.Country;
 import ppj.assignments.service.CountryService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/country")

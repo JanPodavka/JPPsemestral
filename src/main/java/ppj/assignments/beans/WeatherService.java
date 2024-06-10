@@ -90,7 +90,7 @@ public class WeatherService {
                  City existingCity = cityRepository.findByName(city);
                  if (listNode.isArray()) {
 
-                     List<Double> temperatures = new ArrayList<>(); // Store temperatures to compute mean
+                     List<Double> temperatures = new ArrayList<>();
 
                      for (JsonNode item : listNode) {
                          long dt = item.get("dt").asLong();
@@ -108,7 +108,6 @@ public class WeatherService {
                          measurements.add(measurement);
                          temperatures.add(temp);
                      }
-                     // This is for mean
                       double sum = 0;
                     for (double temp : temperatures) {
                         sum += temp;
@@ -121,7 +120,6 @@ public class WeatherService {
                     meanMeasurement.setTemperature(meanTemperature);
                     meanMeasurement.setWindSpeed(0);
                     meanMeasurement.setHumidity(0);
-                    //measurementRepository.save(meanMeasurement);
                     measurements.add(0, meanMeasurement);
 
                  }

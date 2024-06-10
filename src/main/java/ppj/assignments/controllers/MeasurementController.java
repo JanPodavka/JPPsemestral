@@ -3,10 +3,7 @@ package ppj.assignments.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ppj.assignments.beans.WeatherService;
-import ppj.assignments.data.City;
-import ppj.assignments.data.Country;
 import ppj.assignments.data.Measurement;
-import ppj.assignments.service.CountryService;
 import ppj.assignments.service.MeasurementService;
 
 import java.io.IOException;
@@ -31,6 +28,16 @@ public class MeasurementController {
     @PostMapping
     public Measurement addMeasurement(@RequestBody Measurement measurement) {
         return measurementService.addMeasurement(measurement);
+    }
+
+    @PutMapping("/{id}")
+    public Measurement updateMeasurement(@PathVariable Long id, @RequestBody Measurement measurement) {
+        return measurementService.updateMeasurement(id, measurement);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteMeasurement(@PathVariable Long id) {
+        measurementService.deleteMeasurement(id);
     }
 
     //displaying methods

@@ -42,15 +42,15 @@ public class WeatherService {
 
     }
     public List<Measurement> getMeasurementForWeek(String city) throws IOException {
-        long endTimestamp = System.currentTimeMillis() / 1000; // Current time in seconds
-        long startTimestamp = endTimestamp - 7 * 24 * 60 * 60; // 7 days ago
+        long endTimestamp = System.currentTimeMillis() / 1000;
+        long startTimestamp = endTimestamp - 7 * 24 * 60 * 60;
         getActualWeatherByCity(city);
         return getHistoricalWeather(city, startTimestamp, endTimestamp);
 
     }
     public List<Measurement> getMeasurementForTwoweeks(String city) throws IOException {
-        long endTimestamp = System.currentTimeMillis() / 1000; // Current time in seconds
-        long startTimestamp = endTimestamp - 14 * 24 * 60 * 60; // 14 days ago
+        long endTimestamp = System.currentTimeMillis() / 1000;
+        long startTimestamp = endTimestamp - 14 * 24 * 60 * 60;
         getActualWeatherByCity(city);
         return getHistoricalWeather(city, startTimestamp, endTimestamp);
     }

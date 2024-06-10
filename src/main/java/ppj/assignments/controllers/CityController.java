@@ -24,4 +24,13 @@ public class CityController {
     public City addCity(@RequestBody City city) {
         return cityService.addCity(city);
     }
+    @PutMapping("/{id}")
+    public City updateCity(@PathVariable Long id, @RequestBody City city) {
+        return cityService.updateCity(id, city);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCity(@PathVariable Long id) {
+        cityService.deleteCity(id);
+    }
 }

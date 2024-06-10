@@ -7591,3 +7591,35 @@ Verify the connector's configuration, identify and stop any process that's liste
 03:29:09.364 [Thread-2] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 03:29:09.371 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 03:29:09.383 [Thread-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+03:29:16.727 [main] INFO  ppj.assignments.Main - Starting Main on HonzaP with PID 23780 (E:\VS_TUL_navazujici\2_semestr\PPJ\cv\semestral\target\classes started by HonzaP in E:\VS_TUL_navazujici\2_semestr\PPJ\cv\semestral)
+03:29:16.729 [main] DEBUG ppj.assignments.Main - Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+03:29:16.729 [main] INFO  ppj.assignments.Main - The following profiles are active: devel
+03:29:17.110 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+03:29:17.156 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40ms. Found 3 repository interfaces.
+03:29:17.507 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5d4aabf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03:29:17.736 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+03:29:17.749 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+03:29:17.757 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+03:29:17.757 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.16]
+03:29:17.764 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-22\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\podav\apache-cassandra-4.0.4\bin;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.3.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\Bin\;C:\Program Files\IVI Foundation\IVI\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\MATLAB\R2023b\bin;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;E:\Programming\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\Users\podav\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\podav\AppData\Local\Programs\Python\Python310\;C:\Users\podav\AppData\Local\Microsoft\WindowsApps;C:\Program Files\heroku\bin;C:\Program Files\JetBrains\JetBrains Rider 2022.1.2\bin;;C:\Users\podav\.dotnet\tools;C:\flutter\bin;;C:\Program Files\Azure Data Studio\bin;C:\Users\podav\AppData\Roaming\npm;E:\Programming\webstorm\WebStorm 2024.1.2\bin;;.]
+03:29:17.866 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+03:29:17.866 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1098 ms
+03:29:17.994 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+03:29:18.114 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+03:29:18.154 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03:29:18.196 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final}
+03:29:18.197 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+03:29:18.322 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+03:29:18.428 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+03:29:18.916 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03:29:19.321 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+03:29:19.352 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+03:29:19.472 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+03:29:19.508 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+03:29:19.509 [main] INFO  ppj.assignments.Main - Started Main in 3.08 seconds (JVM running for 3.598)
+03:29:37.709 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+03:29:37.710 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+03:29:37.715 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+03:29:37.897 [http-nio-8080-exec-1] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory

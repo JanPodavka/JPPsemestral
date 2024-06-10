@@ -24,14 +24,14 @@ public class CountryController {
         return countryService.addCountry(country);
     }
 
-//    @PutMapping("/{id}")
-//    public Optional<Country> updateCountry(@PathVariable Long id, @RequestBody Country country) {
-//        return countryService.updateCountry(id, country);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void deleteCountry(@PathVariable Long id) {
-//        countryService.deleteCountry(id);
-//    }
+@PutMapping("/{id}")
+    public Country updateCountry(@PathVariable String id, @RequestBody Country country) {
+        return countryService.updateCountry(id, country);
+    }
 
+    @DeleteMapping("/{id}")
+    public void deleteCountry(@PathVariable String id) {
+        countryService.deleteCountry(id);
+    }
 }
+

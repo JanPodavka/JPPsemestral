@@ -10,4 +10,6 @@ import ppj.assignments.data.Country;
 public interface CityRepository extends JpaRepository<City, Long> {
     City findByName(String name);
     boolean existsByName(String name);
+    void deleteByName(String name);
+
 }

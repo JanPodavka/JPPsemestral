@@ -18,8 +18,8 @@ public class City {
 
     //Definice konstruktorů a getterů
     public City() {
-        this.country = new Country();
     }
+
     public City(String name, Country country, float latitude, float longitude) {
         this.name = name;
         this.country = country;

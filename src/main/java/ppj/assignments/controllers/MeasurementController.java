@@ -30,6 +30,11 @@ public class MeasurementController {
         return measurementService.addMeasurement(measurement);
     }
 
+    @GetMapping("/{id}")
+    public Measurement getMeasurement(@PathVariable Long id, @RequestBody Measurement measurement) {
+        return measurementService.updateMeasurement(id, measurement);
+    }
+
     @PutMapping("/{id}")
     public Measurement updateMeasurement(@PathVariable Long id, @RequestBody Measurement measurement) {
         return measurementService.updateMeasurement(id, measurement);

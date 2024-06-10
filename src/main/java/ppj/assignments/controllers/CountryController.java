@@ -24,7 +24,7 @@ public class CountryController {
         return countryService.addCountry(country);
     }
 
-@PutMapping("/{id}")
+    @PutMapping("/{id}")
     public Country updateCountry(@PathVariable String id, @RequestBody Country country) {
         return countryService.updateCountry(id, country);
     }
@@ -33,5 +33,7 @@ public class CountryController {
     public void deleteCountry(@PathVariable String id) {
         countryService.deleteCountry(id);
     }
+
+
 }
 

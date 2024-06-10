@@ -28,7 +28,8 @@ public class CityControllerTest {
     @Autowired
     private CountryRepository countryRepository;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    @Autowired
+    private ObjectMapper objectMapper;
 
     @Test
     public void testGetAllCities() throws Exception {
@@ -53,36 +54,45 @@ public void testAddCity() throws Exception {
                .andExpect(jsonPath("$.name").value("Liberec"));
    }
 
-   @Test
+ @Test
 public void testUpdateCity() throws Exception {
+    // Create a country
     Country country = new Country();
     country.setCountryCode("CZ");
     country = countryRepository.save(country);
 
+    // Create a city
     City city = new City();
     city.setName("Testing");
+    city.setLongitude(5);
     city.setCountry(country);
     city = cityRepository.save(city);
 
-    city.setName("Testing_new");
+    City updatedCity = new City();
+    updatedCity.setName("Testing");
+    updatedCity.setLongitude(6);
+    updatedCity.setCountry(country);
+
     mockMvc.perform(put("/api/city/" + city.getName())
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(objectMapper.writeValueAsString(city)))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.name").value("Testing_new"));
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(updatedCity)))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.longitude").value(6));
 }
 
 @Test
 public void testDeleteCity() throws Exception {
+    // Create a country
     Country country = new Country();
     country.setCountryCode("CZ");
-    country = countryRepository.save(country);
+    countryRepository.save(country);
 
     City city = new City();
     city.setName("Lisabon");
     city.setCountry(country);
-    city = cityRepository.save(city);
 
+    // Save the city
+    cityRepository.save(city);
     mockMvc.perform(delete("/api/city/" + city.getName()))
             .andExpect(status().isOk());
 }

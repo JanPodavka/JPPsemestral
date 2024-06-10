@@ -25,12 +25,12 @@ public class CityController {
         return cityService.addCity(city);
     }
     @PutMapping("/{id}")
-    public City updateCity(@PathVariable Long id, @RequestBody City city) {
+    public City updateCity(@PathVariable String id, @RequestBody City city) {
         return cityService.updateCity(id, city);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCity(@PathVariable Long id) {
+    public void deleteCity(@PathVariable String id) {
         cityService.deleteCity(id);
     }
 }

@@ -2,6 +2,7 @@ package ppj.assignments.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ppj.assignments.data.City;
 import ppj.assignments.data.Country;
 import ppj.assignments.repositories.CityRepository;
@@ -22,8 +23,8 @@ public class CityService {
         return cityRepository.save(city);
     }
 
-    public City updateCity(Long id, City updatedCity) {
-        Optional<City> optionalCity = cityRepository.findById(id);
+    public City updateCity(String id, City updatedCity) {
+        Optional<City> optionalCity = Optional.ofNullable(cityRepository.findByName(id));
         if (optionalCity.isPresent()) {
             City existingCity = optionalCity.get();
             existingCity.setName(updatedCity.getName());
@@ -36,7 +37,9 @@ public class CityService {
         }
     }
 
-    public void deleteCity(Long id) {
-        cityRepository.deleteById(id);
+     @Transactional
+    public void deleteCity(String id) {
+        cityRepository.deleteByName(id);
     }
+
 }

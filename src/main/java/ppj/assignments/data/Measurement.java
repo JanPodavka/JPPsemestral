@@ -56,10 +56,22 @@ public class Measurement implements Serializable {
     public int getHumidity() {
         return humidity;
     }
-    public void setId(final long id) {}
-    public void setTimestamp(final Timestamp timestamp) {}
-    public void setTemperature(final double temperature) {}
-    public void setWindSpeed(final double windSpeed) {}
-    public void setHumidity(final int humidity) {}
-    public void setCity(final City city) {}
+    public void setId(final long id) {
+        this.id = id;
+    }
+    public void setTimestamp(final Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
+    public void setTemperature(final double temperature) {
+        this.temperature = temperature;
+    }
+    public void setWindSpeed(final double windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+    public void setHumidity(final int humidity) {
+        this.humidity = humidity;
+    }
+    public void setCity(final City city) {
+        this.city = city;
+    }
 }

@@ -98,18 +98,12 @@ public class WeatherService {
                          int humidity = item.get("main").get("humidity").asInt();
                          double windSpeed = item.get("wind").get("speed").asDouble();
 
-                         System.out.println("DateTime: " + dt);
-                         System.out.println("Temperature: " + temp);
-                         System.out.println("Humidity: " + humidity);
-                         System.out.println("Wind Speed: " + windSpeed);
-                         System.out.println("-------------");
                          Measurement measurement = new Measurement();
                          measurement.setCity(existingCity);
                          measurement.setTimestamp(new Timestamp(dt * 1000));
                          measurement.setTemperature(temp);
                          measurement.setWindSpeed(windSpeed);
                          measurement.setHumidity(humidity);
-                         System.out.println(measurement.getTemperature());
                          measurementRepository.save(measurement);
                          measurements.add(measurement);
                          temperatures.add(temp);
